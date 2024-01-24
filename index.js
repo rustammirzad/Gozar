@@ -41,11 +41,20 @@ const db = mysql.createConnection({
 
 
 app.get('/',(req,res) => {
+    let users = {
+        name:"Rustam",
+        lastName:"Mehrzade"
+    }
+    return res.json(users);
+    
+    /*
     const sql = "SELECT * FROM `items` ORDER BY item_id DESC";    
     db.query(sql,(err,data) => {
         if(err) return json(err);
         return res.json(data)
+        
     })
+    */
 })
 
 app.get('/:id', (req,res) => {
